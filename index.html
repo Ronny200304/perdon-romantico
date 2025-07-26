@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perdóname, mi amor</title>
+  <style>
+    body {
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      font-family: 'Georgia', serif;
+      color: #5a3e36;
+      text-align: center;
+      padding: 2rem;
+      background-color: #fff5e1;
+      overflow: hidden;
+    }
+
+    .carta {
+      background: rgba(255, 255, 255, 0.88);
+      padding: 3rem;
+      border-radius: 12px;
+      border: 2px solid #d6b59c;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      animation: entrada 1.5s ease-in-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes entrada {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #a8574e;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #b03a2e;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    button {
+      background-color: #d6b59c;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b78a73;
+    }
+
+    #mensaje {
+      display: none;
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #6e4a3b;
+      animation: aparecer 1s ease forwards;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .corazon {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: url('https://i.imgur.com/V6bNTs8.png') no-repeat center center;
+      background-size: contain;
+      animation: flotar 10s infinite linear;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-10vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="carta">
+    <h1>Hermosa mujer ...</h1>
+    <p>En nuestra historia, cometí errores.  
+    No quiero justificarlos, solo quiero pedirte algo desde lo más profundo de mi corazón:</p>
+    <h2>Perdóname ❤️</h2>
+    <p>Eres una persona increíble, y lo sé ahora más que nunca.  
+    Te fallé, y me duele haber sido yo quien apagó tu sonrisa.  
+    Solo quiero tener la oportunidad de hacer las cosas bien y verte feliz otra vez, a mi lado.</p>
+    <button onclick="mostrarMensaje()">Leer mi última petición</button>
+    <p id="mensaje">No voy a prometerte palabras vacías.  
+    Esta vez quiero demostrarte, con hechos, que aprendí de mis errores.  
+    Que mereces amor de verdad, respeto constante y paz.  
+    Y si me das la oportunidad, voy a esforzarme cada día por merecerte de nuevo.</p>
+  </div>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById("mensaje").style.display = "block";
+    }
+
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('corazon');
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.top = `${Math.random() * 100}vh`;
+      heart.style.animationDuration = `${6 + Math.random() * 6}s`;
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
+Crear index.html para carta romántica
